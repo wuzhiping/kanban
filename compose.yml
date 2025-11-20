@@ -1,0 +1,25 @@
+services:
+  vikunja:
+    image: vikunja/vikunja
+    environment:
+      VIKUNJA_SERVICE_PUBLICURL: http://kanba.feg.cn
+      VIKUNJA_DATABASE_HOST: db
+      VIKUNJA_DATABASE_PASSWORD: vikunja
+      VIKUNJA_DATABASE_TYPE: postgres
+      VIKUNJA_DATABASE_USER: vikunja
+      VIKUNJA_DATABASE_DATABASE: vikunja
+    ports:
+      - 3456:3456
+    volumes:
+      - ./files:/app/vikunja/files
+    depends_on: [db]
+    restart: unless-stopped
+
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_PASSWORD: vikunja
+      POSTGRES_USER: vikunja
+    volumes:
+      - ./db:/var/lib/postgresql
+    restart: unless-stopped
