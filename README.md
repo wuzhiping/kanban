@@ -1,3 +1,4 @@
+```json
 "mcp": {
     "planka-kanban": {
       "type": "local",
@@ -10,3 +11,4 @@
       "enabled":true
     }
 },
+```
