@@ -1,3 +1,4 @@
+```code
 curl -N http://127.0.0.1:18789/v1/chat/completions   -H 'Authorization: Bearer 9fb789b9632eb69cee22aa99501d169f051777d7e47ce6cb'   -H 'Content-Type: application/json'   -d '{
     "model": "openclaw",
     "stream": true, "user": "jinbe-session-001",
@@ -13,8 +14,9 @@ curl -sS http://127.0.0.1:18789/tools/invoke   -H 'Authorization: Bearer 9fb789b
       "limit": 20
     }
   }'
+```
 
- 
+```json 
   "auth": {
     "profiles": {
       "feg:default": {
@@ -74,8 +76,8 @@ curl -sS http://127.0.0.1:18789/tools/invoke   -H 'Authorization: Bearer 9fb789b
     }
   },
   
-  
-  
+```
+```json  
   
   "gateway": {
     "port": 18789,
@@ -92,8 +94,9 @@ curl -sS http://127.0.0.1:18789/tools/invoke   -H 'Authorization: Bearer 9fb789b
     }
   },
   
+```
   
   
   
-  
+
   
