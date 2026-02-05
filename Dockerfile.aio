@@ -1,0 +1,9 @@
+FROM enterprise-public-cn-beijing.cr.volces.com/vefaas-public/all-in-one-sandbox:latest
+RUN npm i -g -U opencode-ai
+RUN npm i -g -U openclaw
+
+# RUN openclaw browser extension install
+# RUN openclaw browser extension path
+
+COPY ./favicon.svg /opt/aio/favicon.svg
+COPY ./nginx.aio_index.conf /opt/gem/nginx/nginx.aio_index.conf
