@@ -1,3 +1,7 @@
+```code
+    docker run --rm -it --security-opt seccomp=unconfined -p 3888:8080 shawoo/all-in-one-sandbox
+```
+
 <img width="1366" height="682" alt="openclaw" src="https://github.com/user-attachments/assets/411d3b29-3368-4a7a-933d-78fe81e71bb0" />
 
 
