@@ -82,6 +82,9 @@ curl -sS http://127.0.0.1:18789/tools/invoke   -H 'Authorization: Bearer 9fb789b
   "gateway": {
     "port": 18789,
     "controlUi": {
+       "allowedOrigins": [
+        "http://10.17.1.26:3888"
+      ],
       "allowInsecureAuth": true
     },
     "http": {
@@ -102,4 +105,5 @@ curl -sS http://127.0.0.1:18789/tools/invoke   -H 'Authorization: Bearer 9fb789b
   
 
   
+
 
