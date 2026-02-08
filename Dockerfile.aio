@@ -1,9 +1,29 @@
-FROM ghcr.io/agent-infra/sandbox:latest
+#FROM ghcr.io/agent-infra/sandbox
+#
+#RUN npm i -g -U opencode-ai
+#RUN npm i -g -U openclaw
+#
+#COPY ./favicon.svg /opt/aio/favicon.svg
+#COPY ./nginx.aio_index.conf /opt/gem/nginx/nginx.aio_index.conf
+#COPY ./code_server.conf /opt/gem/nginx/code_server.conf
+#
+#COPY ./openclaw_gem.conf  /opt/gem/supervisord/openclaw_gem.conf
+#
+
+FROM shawoo/all-in-one-sandbox:base
+
 RUN npm i -g -U opencode-ai
 RUN npm i -g -U openclaw
 
-# RUN openclaw browser extension install
-# RUN openclaw browser extension path
+USER gem
+RUN rm -R /home/gem/.openclaw/browser/chrome-extension
+RUN openclaw browser extension install
 
-COPY ./favicon.svg /opt/aio/favicon.svg
-COPY ./nginx.aio_index.conf /opt/gem/nginx/nginx.aio_index.conf
+USER root
+
+# build.sh
+#VERSION=$(date +%Y.%-m.%-d)
+#echo "Building version: $VERSION"
+#docker build -t shawoo/all-in-one-sandbox:$VERSION . -f Dockerfile.today --pull  --no-cache
+##docker push shawoo/all-in-one-sandbox:$VERSION
+#docker run --rm -it --security-opt seccomp=unconfined -p 3888:8080 shawoo/all-in-one-sandbox:$VERSION
