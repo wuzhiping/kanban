@@ -10,6 +10,11 @@
 #COPY ./openclaw_gem.conf  /opt/gem/supervisord/openclaw_gem.conf
 #
 
+# docker run --rm --name=base -it shawoo/all-in-one-sandbox
+# openclaw browser extension install
+# ... ...
+# docker commit base shawoo/all-in-one-sandbox:base
+
 FROM shawoo/all-in-one-sandbox:base
 
 RUN npm i -g -U opencode-ai
